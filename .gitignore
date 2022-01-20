@@ -6,3 +6,5 @@ cmake-build*
 
 opencv/
 opencv*/
+venv
+.vscode
