@@ -5,12 +5,27 @@ We will in this part download the code from the course repository, and open the 
 Clone this repository on your machine.
 The lab machines have a directory `labs` under the home directory.
 We can clone the lab under this directory by typing the following in the terminal:
-```
+
+```bash
 cd ~/labs
 git clone https://github.com/tek5030/lab_00.git
 cd lab_00
 ```
 You should now find the code and this lab guide in `~/labs/lab_00`.
+
+### Install dependencies
+
+In the terminal, we will type one more command:
+
+```bash
+# cd ~/labs
+# git clone https://github.com/tek5030/lab_00.git
+# cd lab_00
+
+conan install . --install-folder=cmake-build-debug
+```
+
+(We choose `cmake-build-debug` because that will match the build folder used later in the guide.)
 
 ## 2. Open CLion
 We will use CLion as IDE in the labs.

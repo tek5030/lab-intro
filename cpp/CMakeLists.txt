@@ -2,30 +2,31 @@ cmake_minimum_required( VERSION 3.5.1 )
 
 project(lab_00_intro)
 
-# Compiler flags
-if (MSVC)
-  set(compiler_options /W4)
-  add_definitions(/D_USE_MATH_DEFINES)
-else ()
-  set(compiler_options -Wall -Wextra -Wpedantic)
-endif (MSVC)
+list(PREPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 
 # Find libraries
 find_package(OpenCV 4 REQUIRED)
-find_package(Eigen3 REQUIRED)
-find_package(Sophus REQUIRED)
-find_package(GeographicLib REQUIRED)
 
-add_executable(${PROJECT_NAME} main.cpp)
+set(exe_name lab_00_intro)
+add_executable(${exe_name} main.cpp)
 
-target_link_libraries(${PROJECT_NAME}
-  ${OpenCV_LIBS}
-  Sophus::Sophus
-  Eigen3::Eigen
+target_link_libraries(${exe_name}
+  opencv::opencv
   )
 
-target_compile_options(${PROJECT_NAME} PRIVATE ${compiler_options})
-set_target_properties(${PROJECT_NAME} PROPERTIES
+set_target_properties(${exe_name} PROPERTIES
   CXX_STANDARD_REQUIRED ON
-  CXX_STANDARD 14
+  CXX_STANDARD 17
+  )
+
+set(gcc_like_cxx "$<COMPILE_LANG_AND_ID:CXX,ARMClang,AppleClang,Clang,GNU,LCC>")
+set(msvc_cxx "$<COMPILE_LANG_AND_ID:CXX,MSVC>")
+
+target_compile_options(${exe_name} PRIVATE
+  "$<${gcc_like_cxx}:$<BUILD_INTERFACE:-Wall;-Wextra;-Wpedantic;-Wshadow;-Wformat=2>>"
+  "$<${msvc_cxx}:$<BUILD_INTERFACE:-W4;-MD>>"
+  )
+
+target_compile_definitions(${exe_name} PUBLIC
+  "$<${msvc_cxx}:-D_USE_MATH_DEFINES>"
   )
