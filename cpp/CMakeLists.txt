@@ -10,8 +10,12 @@ find_package(OpenCV 4 REQUIRED)
 set(exe_name lab_00_intro)
 add_executable(${exe_name} main.cpp)
 
+if (NOT OpenCV_LIBS)  # If conan
+  set(OpenCV_LIBS "opencv::opencv")
+endif()
+
 target_link_libraries(${exe_name}
-  opencv::opencv
+  ${OpenCV_LIBS}
   )
 
 set_target_properties(${exe_name} PROPERTIES
