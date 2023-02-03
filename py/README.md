@@ -1,4 +1,4 @@
-# Lab 0: Introduction to Python and OpenCV
+# Introduction to Python and OpenCV
 We will in this first lab start playing around with Python and images
 by capturing video and processing it in real time using OpenCV.
 
