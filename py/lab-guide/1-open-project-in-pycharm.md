@@ -11,17 +11,14 @@ sudo apt install python3.8 python3.8-dev python3.8-distutils python3.8-venv
 ```
 
 ## 1. Clone the code
-Clone this repository on your machine.
-The lab machines have a directory `labs` under the home directory.
-We can clone the lab under this directory by typing the following in the terminal:
+Clone this repository on your machine by typing the following in the terminal:
 ```
-cd ~/labs
-git clone https://github.com/tek5030/lab_00.git
-cd lab_00
+git clone https://github.com/tek5030/lab-intro.git
+cd lab-intro/py
 ```
-You should now find the code and this lab guide in `~/labs/lab_00`.
-The C++ version is in the subfolder called `cpp`,
-and the Python version in the subfolder called `py`. 
+
+The C++ version is in the subfolder called `lab-intro/cpp`,
+and the Python version in the subfolder called `lab-intro/py`. 
 
 ## 2. Open PyCharm
 We will use PyCharm as IDE in the labs.
@@ -39,10 +36,9 @@ Open the `py` folder in the lab directory.
 
 PyCharm should discover our `requirements.txt` and offer to create a virtual environment based on our python3.8 interpreter. Press OK.
 
+![Open the py subfolder in the lab directory](img/find-code-1.png)
 
-![Open the "CMakeLists.txt" file in the lab directory](img/find-code-1.png)
-
-![Open the "CMakeLists.txt" file in the lab directory](img/create-env.png)
+![PyCharm creating av virtual environment](img/create-env.png)
 
 ## 5. We are ready to do some programming!
 ![The lab project should now be open and ready for editing](img/opened-project-1.png)

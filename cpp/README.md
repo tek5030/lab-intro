@@ -1,4 +1,4 @@
-# Lab 0: Introduction to C++ and OpenCV
+# Introduction to C++ and OpenCV
 We will in this first lab start playing around with C++ and images
 by capturing video and processing it in real time using OpenCV.
 

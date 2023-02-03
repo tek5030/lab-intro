@@ -1,13 +1,13 @@
 cmake_minimum_required( VERSION 3.5.1 )
 
-project(lab_00_intro)
+project(lab_intro)
 
 list(PREPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 
 # Find libraries
 find_package(OpenCV 4 REQUIRED)
 
-set(exe_name lab_00_intro)
+set(exe_name lab_intro)
 add_executable(${exe_name} main.cpp)
 
 if (NOT OpenCV_LIBS)  # If conan
