@@ -2,10 +2,10 @@ import cv2
 
 
 def lab00():
+    # If you are on Windows, please use: cv2.VideoCapture(..., cv2.CAP_DSHOW)
     pass
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     lab00()
 

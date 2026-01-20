@@ -7,6 +7,12 @@ Write the following code in `main.py`.
 
 ![Python code](img/code.png)
 
+If you are using Windows, you should configure VideoCapture like this:
+```python
+cap = cv2.VideoCapture(device_id, cv2.CAP_DSHOW)
+```
+This will avoid it hanging for several seconds before the stream is ready.
+
 ## 2. Run the code
 You can run/debug the code by pressing `Ctrl + Shift + F10/F9`.
 
@@ -16,6 +22,5 @@ You should now see live video streaming from your camera!
 Read the code.   
 What does it do?   
 Please ask the instructors if you have questions!   
-You should also take a look at our [introduction to C++ and OpenCV](resources/TEK5030-Compendium.pdf).
 
 When you get the code to run, and are finished playing around with it, contine to the [last step](3-processing-live-video.md).
